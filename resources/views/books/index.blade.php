@@ -16,8 +16,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Kitaplar') }}</div>
-                    <form class="container" action="{{ route('books.store') }}">
-                        @csrf
+                    <div class="card-body">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -26,6 +25,7 @@
                                     <th scope="col">Kitap Sayfası</th>
                                     <th scope="col">Okunma Tarihi</th>
                                     <th scope="col">Yazar</th>
+                                    <th>Actions</th>
 
                                     <!-- Diğer sütunlar buraya eklenebilir -->
                                 </tr>
@@ -46,10 +46,10 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <div>
+                        <div class="mb-2 pl-2">
                             <a href="{{ route('books.create') }}" class="btn btn-success">Kitap Ekle</a>
-
                         </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
+    public function createBooks()
+    {
+        $books = Book::factory()->count(10)->create();
 
+        return $books;
+    }
     
     public function index()
     {
