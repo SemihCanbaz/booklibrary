@@ -25,6 +25,7 @@ class BookRequest extends FormRequest
             'name' => 'required',
             'page_count' => 'numeric',
             'date' => 'required|date',
+            'writer'=> 'required',
         ];
     }
 }

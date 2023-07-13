@@ -11,6 +11,18 @@
 
                         <form action="{{ route('books.store') }}" method="POST">
                             @csrf
+                            @if (session('success'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('success') }}
+                                </div>
+
+                                <script>
+                                    setTimeout(function() {
+                                        window.location.href = "{{ route('books.index') }}";
+                                    }, 3000);
+                                </script>
+                            @endif
+
                             <div class="form-group">
                                 <label for="">Kitabın Adı</label>
                                 <input type="text" name="name" class="form-control" placeholder="Kitabın Adı">
@@ -18,7 +30,7 @@
                             <br>
                             <div class="form-group">
                                 <label for="">Sayfa Sayısı</label>
-                                <input type="text" name="page_count" class="form-control" placeholder="Sayfa Sayısı">
+                                <input type="text" name="page_count" class="form-control" placeholder="">
                             </div>
                             <br>
                             <div class="form-group">

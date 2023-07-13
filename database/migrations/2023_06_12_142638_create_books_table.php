@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-
             $table->string('name');
             $table->double('page_count');
             $table->string('writer');
-            
             $table->date('date')->default(now());
             $table->timestamps();
         });
@@ -29,7 +27,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('books');
-        $table->dropColumn('date');
         
     }
 };

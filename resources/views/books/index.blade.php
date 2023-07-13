@@ -33,12 +33,13 @@
                             <tbody>
                                 @foreach ($books as $book)
                                     <tr>
-                                        <td>{{ $book->id }}</td>
+                                        <th scope="row">{{ $book->id }}</th>
                                         <td>{{ $book->name }}</td>
                                         <td>{{ $book->page_count }}</td>
                                         <td>{{ $book->date }}</td>
                                         <td>{{ $book->writer }}</td>
-
+                                        <td><a href="{{ route('books.edit', $book->id) }}" class="btn btn-info">Düzenle</a>
+                                        </td>
 
                                         <!-- Diğer sütun verileri buraya eklenebilir -->
                                     </tr>
