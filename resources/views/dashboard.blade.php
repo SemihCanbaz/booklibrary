@@ -1,42 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <style>
-        .card-header {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-size: 20px;
-            font-weight: bold;
-        }
-    </style>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="mb-4">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">{{ __('Login To The Library') }}</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        <br>
-                        <div class="mb-4">
-                            <a href="{{ route('books.index') }}" class="btn btn-outline-primary ">Kütüphane'ye Giriş Yap</a>
-                            <br>
-
-                            <form method="POST" action="{{ route('uploadPhoto') }}" enctype="multipart/form-data">
-                                @csrf
-                                <br>
-                                <input type="file" name="photo">
-                                <button type="submit" class="btn btn-danger">Fotoğrafı Yükle</button>
-                            </form>
-                        </div>
+                    <div class="card-header">
+                        Kitaplar
                     </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Kitaplar Grafiği
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection
