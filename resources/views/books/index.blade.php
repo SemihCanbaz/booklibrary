@@ -25,7 +25,7 @@
                                     <th scope="col">Kitap Sayfası</th>
                                     <th scope="col">Okunma Tarihi</th>
                                     <th scope="col">Yazar</th>
-                                    <th>Actions</th>
+                                    <th scope="col">Actions</th>
 
                                     <!-- Diğer sütunlar buraya eklenebilir -->
                                 </tr>
@@ -39,6 +39,8 @@
                                         <td>{{ $book->date }}</td>
                                         <td>{{ $book->writer }}</td>
                                         <td><a href="{{ route('books.edit', $book->id) }}" class="btn btn-info">Düzenle</a>
+                                        </td>
+                                        <td><a href="{{ route('books.delete', $book->id) }}" class="btn btn-danger">Sil</a>
                                         </td>
 
                                         <!-- Diğer sütun verileri buraya eklenebilir -->

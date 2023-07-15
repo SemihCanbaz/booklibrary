@@ -27,6 +27,9 @@ Route::get('/kitaplar',[BookController::class,'index'])->name('books.index') ;
 Route::get('/kitaplar/ekle',[BookController::class,'create'])->name('books.create') ;
 Route::post('/kitaplar/ekle',[BookController::class,'store'])->name('books.store') ;
 Route::get('/kitaplar/{id}',[BookController::class,'edit'])->name('books.edit') ;
+Route::post('/kitaplar/{id}',[BookController::class,'update'])->name('books.update') ;
+Route::get('/kitaplar/sil/{id}',[BookController::class,'delete'])->name('books.delete') ;
+
 
 });
 

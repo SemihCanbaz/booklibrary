@@ -17,7 +17,13 @@ class BookController extends Controller
     
     public function index()
     {
-        $books = Book::get();
+        $books = Book::orderBy('id')->get();
+
+        // Verileri sıfırdan başlayarak yeniden numaralandırma işlemi
+        $books = $books->map(function ($book, $key) {
+            $book->id = $key + 1;
+            return $book;
+        });
     
         return view('books.index', compact('books'));
     }
@@ -38,7 +44,25 @@ class BookController extends Controller
 
     public function edit($id){
         $book = Book::findOrFail($id);
-        return view('books.edit');
+        return view('books.edit', compact('book'));
+    }
+
+    public function delete($id){
+        $book = Book::findOrFail($id)->delete();
+        return redirect()->route('books.index')->with('success', 'Kitap başarıyla silindi . ');
+    }
+
+    public function update(BookRequest $request , $id)
+    {
+        $book = Book::findOrFail($id);
+        $book->name = $request->name;
+        $book->page_count = $request->page_count;
+        $book->date = $request->date;
+        $book->writer = $request->writer;
+        $book->save();
+
+    
+        return redirect()->route('books.index')->with('success', 'Kitap başarıyla güncellendi . ');
     }
 
  
