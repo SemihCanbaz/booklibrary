@@ -22,6 +22,7 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
 

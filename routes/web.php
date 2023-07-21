@@ -23,13 +23,8 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::post('logout',[AuthController::class,'logout'])->name('logout');
-Route::get('/kitaplar',[BookController::class,'index'])->name('books.index') ;
-Route::get('/kitaplar/ekle',[BookController::class,'create'])->name('books.create') ;
-Route::post('/kitaplar/ekle',[BookController::class,'store'])->name('books.store') ;
-Route::get('/kitaplar/{id}',[BookController::class,'edit'])->name('books.edit') ;
-Route::post('/kitaplar/{id}',[BookController::class,'update'])->name('books.update') ;
-Route::get('/kitaplar/sil/{id}',[BookController::class,'delete'])->name('books.delete') ;
-
-
+Route::resource('books',BookController::class);
+Route::get('books/createBooks', [BookController::class, 'createBooks'])->name('books.createBooks');
+Route::get('/assignAdmin/{user}',[AuthController::class,'assignAdmin']);
 });
 

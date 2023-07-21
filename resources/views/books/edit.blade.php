@@ -12,6 +12,7 @@
 
                         <form action="{{ route('books.update', $book->id) }}" method="POST">
                             @csrf
+                            @method('PUT')
                             @if (session('success'))
                                 <div class="alert alert-success" role="alert">
                                     {{ session('success') }}
@@ -47,12 +48,16 @@
                                 <input type="text" name="writer" value="{{ $book->writer }}" class="form-control"
                                     placeholder="Yazar">
                             </div>
-
-                            <button type="submit" class="btn btn-success text-center">Güncelle</button>
-
+                            <br>
+                            <div class="col d-flex">
+                                <button type="submit" class="btn btn-success btn-md flex-grow-1">Güncelle</button>
+                            </div>
                         </form>
+                        <br>
 
-                        <a href="{{ route('books.index') }}" class="btn btn-danger text-center">Kütüphaneme Dön</a>
+                        <a href="{{ route('books.index') }}"
+                            class="btn btn-danger d-flex justify-content-center">Kütüphaneme
+                            Dön</a>
 
                     </div>
                     <br>

@@ -41,4 +41,9 @@ class AuthController extends Controller
         Auth::logout();
         return redirect()->route('home');
     }
+
+    public function assignAdmin(User $user)
+    {
+        $user->assignRole('admin');
+    }
 }
