@@ -32,11 +32,15 @@
                                 <input type="text" name="writer" class="form-control" placeholder="Yazar">
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-success" id="go-to-index">Kütüphaneme Kaydet</button>
-
+                            <div class="col d-flex">
+                                <button type="submit" class="btn btn-success btn-md flex-grow-1"
+                                    id="go-to-index">Kütüphaneme Kaydet</button>
+                            </div>
+                            <br>
                         </form>
-                        <div class="text-center">
-                            <a href="{{ route('books.index') }}" class="btn btn-danger">Kütüphaneme Dön</a>
+                        <div class="col d-flex">
+                            <a href="{{ route('books.index') }}" class="btn btn-danger btn-md flex-grow-1">Kütüphaneme
+                                Dön</a>
                         </div>
                         <br>
 
